@@ -1,12 +1,12 @@
 import client from '../database/database';
-
-type Order = {
-  id?: number;
-  quantity: number;
-  status: string;
-  product_id: number;
-  user_id: number;
-};
+import Order from '../types/orderType';
+// type Order = {
+//   id?: number;
+//   quantity: number;
+//   status: string;
+//   product_id: number;
+//   user_id: number;
+// };
 
 class OrdersStore {
   async getUserOrder(user_id: number): Promise<Order> {

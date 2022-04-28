@@ -1,10 +1,11 @@
 import client from '../database/database';
+import Product from '../types/productType';
 
-type Product = {
-  id?: number;
-  name: string;
-  price: string;
-};
+// type Product = {
+//   id?: number;
+//   name: string;
+//   price: string;
+// };
 
 class productStore {
   // Index

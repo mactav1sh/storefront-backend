@@ -10,8 +10,13 @@ export const getUserOrder = async (
 ) => {
   try {
     const id = parseInt(req.params.id);
-    console.log(req.params);
     const response = await store.getUserOrder(id);
+    if (!response) {
+      return res.status(404).json({
+        status: 'error',
+        message: `user with id:${id}, doesn't have any orders`,
+      });
+    }
     res.json({
       status: 'success',
       data: response,

@@ -1,14 +1,7 @@
 import client from '../database/database';
 import bcrypt from 'bcrypt';
-
+import User from '../types/userType';
 const { SALT_ROUNDS, PEPPER } = process.env;
-
-type User = {
-  id?: number;
-  first_name: string;
-  last_name: string;
-  password: string;
-};
 
 class UserStore {
   // Index
@@ -38,6 +31,7 @@ class UserStore {
       throw new Error(error.message);
     }
   }
+
   // Create User
   async createUser(
     first_name: string,

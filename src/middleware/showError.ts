@@ -6,9 +6,10 @@ export default function (
   res: Response,
   next: NextFunction
 ) {
-  res.status(500).json({
-    status: 'failed',
+  return res.status(500).json({
+    status: 'error',
     message: err.message,
   });
+  //next doesn't do anything here but exists because it causes linting issues if left in parameters and not used, if removed from parameters res won't be defined
   next();
 }
