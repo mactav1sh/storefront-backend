@@ -58,12 +58,8 @@ export const createUser = async (
 ) => {
   try {
     const { first_name, last_name, password } = req.body;
-
-    // JWT CREATION AND VERIFICATION
     const token = jwt.sign({ ...req.body }, process.env.SECRET as string);
-
     const response = await store.createUser(first_name, last_name, password);
-
     if (!response) {
       return res.status(400).json({
         statues: 'error',

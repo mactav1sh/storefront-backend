@@ -8,7 +8,6 @@ import invalidPage from './middleware/invalidPage';
 config();
 
 const port = process.env.PORT || 4000;
-
 const app = express();
 
 // MIDDLEWARES
@@ -32,5 +31,7 @@ app.use(invalidPage);
 
 //STARTING SERVER
 app.listen(port, () => {
-  console.log('***************) SERVER STARTED (***************');
+  console.log('** SERVER STARTED **');
 });
+
+export default app;

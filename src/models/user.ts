@@ -8,7 +8,7 @@ class UserStore {
   async index(): Promise<User[]> {
     try {
       const connection = await client.connect();
-      const sql = 'SELECT * FROM users;';
+      const sql = 'SELECT id, first_name, last_name FROM users;';
       const response = await connection.query(sql);
       connection.release();
       return response.rows;
@@ -17,12 +17,12 @@ class UserStore {
       throw new Error(error.message);
     }
   }
-
   // Show User
   async showUser(id: number): Promise<User> {
     try {
       const connection = await client.connect();
-      const sql = 'SELECT * FROM users WHERE id = ($1);';
+      const sql =
+        'SELECT id, first_name, last_name FROM users WHERE id = ($1);';
       const response = await connection.query(sql, [id]);
       connection.release();
       return response.rows[0];
@@ -31,7 +31,6 @@ class UserStore {
       throw new Error(error.message);
     }
   }
-
   // Create User
   async createUser(
     first_name: string,
@@ -41,7 +40,7 @@ class UserStore {
     try {
       const connection = await client.connect();
       const sql =
-        'INSERT INTO users (first_name,last_name,password) VALUES ($1,$2,$3) RETURNING first_name,last_name,password ;';
+        'INSERT INTO users (first_name,last_name,password) VALUES ($1,$2,$3) RETURNING id, first_name ,last_name;';
       const hash = bcrypt.hashSync(
         `${password}${PEPPER}`,
         parseInt(SALT_ROUNDS as string)
