@@ -130,6 +130,6 @@ This server will be listening on `port:4000`
 
 ### Endpoints.
 
-- Some enpoints will need a JWT to be provided Request Headers Authorization in the following format `Authorization` `Bearer <token>` .
-  - To start testing API for the first time use the following token : `Authorization` `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoidGVzdCIsImxhc3RfbmFtZSI6InVzZXIiLCJwYXNzd29yZCI6InBhc3Nhc2QxMjMiLCJpYXQiOjE2NTEzNDE2OTd9.3Ntbb5LQLRHW52x74b2n16JGcJTLm-dc-BhvGxtzK5s`
+- Some enpoints will need a JWT to be provided Request Headers Authorization in the following format `Authorization` : `Bearer <token>` .
+  - To start testing API for the first time use the following token : `Authorization` : `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoidGVzdCIsImxhc3RfbmFtZSI6InVzZXIiLCJwYXNzd29yZCI6InBhc3Nhc2QxMjMiLCJpYXQiOjE2NTEzNDE2OTd9.3Ntbb5LQLRHW52x74b2n16JGcJTLm-dc-BhvGxtzK5s`
 - Endpoints to access and modify database are available in the [REQUIREMENTS.md](https://github.com/mactav1sh/storefront-backend/blob/master/REQUIREMENTS.md) file
