@@ -47,3 +47,10 @@ These are the notes from a meeting with the frontend developer that describe wha
 - user_id
 - status of order (active or complete)
 - Table: `orders (id SERIAL PRIMARY KEY, quantity INTEGER, status VARCHAR, product_id INTEGER REFERENCES products(id), user_id INTEGER REFERENCES users(id))`
+
+#### Order_products
+
+- id
+- product id
+- quantity of each product in the order
+- Table: `order_products (id SERIAL PRIMARY KEY, quantity INTEGER, product_id INTEGER REFERENCES products(id), orders_id INTEGER REFERENCES orders(id))`
